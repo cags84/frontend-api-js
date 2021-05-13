@@ -1,0 +1,110 @@
+/* Mis estilos */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #007BFF;
+  --color-secundary: #6C757D;
+  --color-success: #28A745;
+  --color-danger: #DC3545;
+  --color-warning: #FFC107;
+  --color-info: #17A2B8;
+  --color-light: #F8F9FA;
+  --color-dark: #343A40;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* estructura */
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Utilidades */
+.primary {
+  color: #fff;
+  background-color: #007BFF;
+}
+
+.secundary {
+  color: #fff;
+  background-color: #6C757D;
+}
+
+.success {
+  color: #fff;
+  background-color: #28A745;
+}
+
+.danger {
+  color: #fff;
+  background-color: #DC3545;
+}
+
+.warning {
+  color: #fff;
+  background-color: #FFC107;
+}
+
+.info {
+  color: #fff;
+  background-color: #17A2B8;
+}
+
+.light {
+  color: #000;
+  background-color: #F8F9FA;
+}
+
+.dark {
+  color: #fff;
+  background-color: #343A40;
+}
+
+/* form login */
+.form {
+  max-width: 100%;
+}
+
+.form__input {
+  display: inline-block;
+  width: 100%;
+  padding: 1em;
+}
+
+.form__input[type=text], .form__input[type=password] {
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.form__input--primary {
+  color: #fff;
+  background-color: var(--color-primary);
+  border: 0;
+}
+
+.form__message {
+  color: #fff;
+  padding: .3em;
+  background-color: var(--color-danger);
+}
+
+
+/* debug */
+.debug-1 {
+  outline: 1px solid var(--color-danger);
+}
+
+.debug-2 {
+  outline: 1px solid var(--color-warning);
+}
