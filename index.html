@@ -25,21 +25,19 @@
     <nav class="nav">
       <div class="logo">
         <img
-          class="nav__img"
+          class="logo__img"
           src="assets/images/logo-white.svg"
           alt="Logo de Twitter"
         />
       </div>
       <div class="branch">
-        <span class="nav__p debug">Twitter</span>
+        <span class="branch_span">Twitter</span>
       </div>
     </nav>
 
     <header class="header">
       <div class="wrapper">
-        <h1 class="header__h1" style="font-size: 29px">
-          Iniciar sesión en Twitter
-        </h1>
+        <h1 class="header__h1">Iniciar sesión en Twitter</h1>
       </div>
     </header>
 
@@ -51,26 +49,28 @@
 
     <template id="template-login">
       <div class="form">
-        <p class="form__message" style="display: none"></p>
-        <form id="form-login" action="#" method="POST">
-          <input
-            class="form__input"
-            type="text"
-            name="username"
-            placeholder="Usuario"
-          />
-          <input
-            class="form__input"
-            type="password"
-            name="password"
-            placeholder="Contraseña"
-          />
-          <input
-            class="form__input form__input--primary"
-            type="submit"
-            value="Login"
-          />
-        </form>
+        <p class="form__message display-none"></p>
+        <div class="mb-1em">
+          <form id="form-login" action="#" method="POST">
+            <input
+              class="form__input"
+              type="text"
+              name="username"
+              placeholder="Usuario"
+            />
+            <input
+              class="form__input"
+              type="password"
+              name="password"
+              placeholder="Contraseña"
+            />
+            <input
+              class="form__input form__input--primary"
+              type="submit"
+              value="Login"
+            />
+          </form>
+        </div>
         <p class="text-center">
           <a href="#" class="form__link">Regístrate en Twitter</a>
         </p>

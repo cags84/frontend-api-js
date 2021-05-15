@@ -2,6 +2,8 @@
 *,
 *:after,
 *:before {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -22,43 +24,6 @@ body {
 
 img {
   max-width: 100%;
-}
-
-/* estructura */
-.wrapper {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  color: #fff;
-  background-color: var(--color-primary);
-  padding: 1em;
-  justify-content: flex-start;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.nav img {
-  width: 35px;
-  margin-right: 1em;
-}
-
-.branch {
-  display: flex;
-  width: 50%;
-  align-items: center;
-}
-
-.nav__p {
-  font-size: 18px;
-  font-weight: 700;
 }
 
 /* Utilidades */
@@ -106,6 +71,52 @@ img {
   text-align: center;
 }
 
+.display-none {
+  display: none;
+}
+
+/* estructura */
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  color: #fff;
+  background-color: var(--color-primary);
+  padding: 1em;
+  justify-content: flex-start;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__img {
+  width: 35px;
+  margin-right: 1em;
+}
+
+.branch {
+  display: flex;
+  width: 50%;
+  align-items: center;
+}
+
+.branch_span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* header */
+.header__h1 {
+  font-size: 29px;
+}
+
 /* form login */
 .form {
   max-width: 100%;
@@ -139,6 +150,11 @@ img {
   color: #fff;
   padding: 0.4em;
   background-color: var(--color-danger);
+}
+
+/* fix margin link */
+.mb-1em {
+  margin-bottom: 1em;
 }
 
 /* debug */
