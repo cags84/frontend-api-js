@@ -31,6 +31,7 @@
 
     <template id="template-app">
       <div class="form">
+        <p class="form__message" style="display: none"></p>
         <h2 class="form__title">Login</h2>
         <form id="form-login" action="#" method="POST">
           <input
@@ -51,6 +52,12 @@
             value="Login"
           />
         </form>
+      </div>
+    </template>
+
+    <template id="template-dashboard">
+      <div class="home">
+        <h1>Hola `${username}`</h1>
       </div>
     </template>
 

@@ -1,5 +1,4 @@
 const URL_BASE = 'http://api.makeitreal.local:3000';
-const DIV_APP = document.getElementById('app');
 
 function showFormLogin() {
   const app = document.getElementById('app');
@@ -12,9 +11,25 @@ function showFormLogin() {
   app.appendChild(fragment);
 }
 
+function showDashboard(username) {
+  const app = document.getElementById('app');
+  const template = document.getElementById('template-dashboard').content;
+
+  const fragment = document.createDocumentFragment();
+  const clone = template.cloneNode(true);
+
+  fragment.appendChild(clone);
+  app.appendChild(fragment);
+}
+
 function removeFormLogin() {
   const divLogin = document.querySelector('div.form');
   divLogin.parentElement.removeChild(divLogin);
+}
+
+function init() {
+  const username = localStorage.getItem('name');
+  showDashboard(username);
 }
 
 function login(username, password) {
@@ -41,10 +56,15 @@ function login(username, password) {
       if (json.message === 'ok') {
         localStorage.setItem('username', json.data.username);
         localStorage.setItem('name', json.data.name);
+        removeFormLogin();
+        init();
       } else {
-        console.log('else');
+        const message = document.querySelector('p.form__message');
+        message.style.display = 'block';
+        message.innerHTML = json.message;
       }
-    });
+    })
+    .catch((error) => console.log(error));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -57,6 +77,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = input.password.value;
     login(username, password);
   });
-
-  console.log('Todo cargado!');
 });
