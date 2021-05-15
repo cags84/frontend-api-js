@@ -22,9 +22,24 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
+    <nav class="nav">
+      <div class="logo">
+        <img
+          class="nav__img"
+          src="assets/images/logo-white.svg"
+          alt="Logo de Twitter"
+        />
+      </div>
+      <div class="branch">
+        <span class="nav__p debug">Twitter</span>
+      </div>
+    </nav>
+
     <header class="header">
       <div class="wrapper">
-        <h1 class="header__h1">API MakeItReal</h1>
+        <h1 class="header__h1" style="font-size: 29px">
+          Iniciar sesión en Twitter
+        </h1>
       </div>
     </header>
 
@@ -37,7 +52,6 @@
     <template id="template-login">
       <div class="form">
         <p class="form__message" style="display: none"></p>
-        <h2 class="form__title">Login</h2>
         <form id="form-login" action="#" method="POST">
           <input
             class="form__input"
@@ -49,7 +63,7 @@
             class="form__input"
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Contraseña"
           />
           <input
             class="form__input form__input--primary"
@@ -57,6 +71,9 @@
             value="Login"
           />
         </form>
+        <p class="text-center">
+          <a href="#" class="form__link">Regístrate en Twitter</a>
+        </p>
       </div>
     </template>
 

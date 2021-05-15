@@ -30,11 +30,6 @@ function removeFormLogin() {
   divLogin.parentElement.removeChild(divLogin);
 }
 
-function init() {
-  const username = localStorage.getItem('name');
-  showDashboard(username);
-}
-
 function login(username, password) {
   const user = {
     username,
@@ -68,6 +63,11 @@ function login(username, password) {
       }
     })
     .catch((error) => console.log(error));
+}
+
+function init() {
+  const username = localStorage.getItem('name');
+  showDashboard(username);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
