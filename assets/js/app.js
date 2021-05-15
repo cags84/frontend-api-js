@@ -30,6 +30,11 @@ function removeFormLogin() {
   divLogin.parentElement.removeChild(divLogin);
 }
 
+function init() {
+  const username = localStorage.getItem('name');
+  showDashboard(username);
+}
+
 function login(username, password) {
   const user = {
     username,
@@ -58,16 +63,12 @@ function login(username, password) {
         init();
       } else {
         const message = document.querySelector('p.form__message');
+        message.classList.remove('display-none');
         message.style.display = 'block';
         message.innerHTML = json.message;
       }
     })
     .catch((error) => console.log(error));
-}
-
-function init() {
-  const username = localStorage.getItem('name');
-  showDashboard(username);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
