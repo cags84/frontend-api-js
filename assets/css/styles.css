@@ -6,14 +6,14 @@
 }
 
 :root {
-  --color-primary: #007BFF;
-  --color-secundary: #6C757D;
-  --color-success: #28A745;
-  --color-danger: #DC3545;
-  --color-warning: #FFC107;
-  --color-info: #17A2B8;
-  --color-light: #F8F9FA;
-  --color-dark: #343A40;
+  --color-primary: #007bff;
+  --color-secundary: #6c757d;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+  --color-light: #f8f9fa;
+  --color-dark: #343a40;
 }
 
 body {
@@ -33,42 +33,42 @@ img {
 /* Utilidades */
 .primary {
   color: #fff;
-  background-color: #007BFF;
+  background-color: #007bff;
 }
 
 .secundary {
   color: #fff;
-  background-color: #6C757D;
+  background-color: #6c757d;
 }
 
 .success {
   color: #fff;
-  background-color: #28A745;
+  background-color: #28a745;
 }
 
 .danger {
   color: #fff;
-  background-color: #DC3545;
+  background-color: #dc3545;
 }
 
 .warning {
   color: #fff;
-  background-color: #FFC107;
+  background-color: #ffc107;
 }
 
 .info {
   color: #fff;
-  background-color: #17A2B8;
+  background-color: #17a2b8;
 }
 
 .light {
   color: #000;
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
 }
 
 .dark {
   color: #fff;
-  background-color: #343A40;
+  background-color: #343a40;
 }
 
 /* form login */
@@ -82,7 +82,8 @@ img {
   padding: 1em;
 }
 
-.form__input[type=text], .form__input[type=password] {
+.form__input[type='text'],
+.form__input[type='password'] {
   border-radius: 5px;
   margin-bottom: 1em;
 }
@@ -95,10 +96,9 @@ img {
 
 .form__message {
   color: #fff;
-  padding: .3em;
+  padding: 0.4em;
   background-color: var(--color-danger);
 }
-
 
 /* debug */
 .debug-1 {
