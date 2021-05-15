@@ -6,7 +6,7 @@
 }
 
 :root {
-  --color-primary: #007bff;
+  --color-primary: #1da1f2;
   --color-secundary: #6c757d;
   --color-success: #28a745;
   --color-danger: #dc3545;
@@ -28,6 +28,37 @@ img {
 .wrapper {
   width: 90%;
   margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  color: #fff;
+  background-color: var(--color-primary);
+  padding: 1em;
+  justify-content: flex-start;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav img {
+  width: 35px;
+  margin-right: 1em;
+}
+
+.branch {
+  display: flex;
+  width: 50%;
+  align-items: center;
+}
+
+.nav__p {
+  font-size: 18px;
+  font-weight: 700;
 }
 
 /* Utilidades */
@@ -71,6 +102,10 @@ img {
   background-color: #343a40;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* form login */
 .form {
   max-width: 100%;
@@ -92,6 +127,12 @@ img {
   color: #fff;
   background-color: var(--color-primary);
   border: 0;
+  border-radius: 9999px;
+}
+
+.form__link {
+  text-decoration: none;
+  color: #1b95e0;
 }
 
 .form__message {
