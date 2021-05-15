@@ -2,7 +2,7 @@ const URL_BASE = 'http://api.makeitreal.local:3000';
 
 function showFormLogin() {
   const app = document.getElementById('app');
-  const template = document.getElementById('template-app').content;
+  const template = document.getElementById('template-login').content;
 
   const fragment = document.createDocumentFragment();
   const clone = template.cloneNode(true);
@@ -13,10 +13,13 @@ function showFormLogin() {
 
 function showDashboard(username) {
   const app = document.getElementById('app');
-  const template = document.getElementById('template-dashboard').content;
+  const template = document.getElementById('template-home').content;
+
+  const divHome = template.querySelector('.home');
+  divHome.innerHTML = `<p>Hola ${username}</p>`;
 
   const fragment = document.createDocumentFragment();
-  const clone = template.cloneNode(true);
+  const clone = divHome.cloneNode(true);
 
   fragment.appendChild(clone);
   app.appendChild(fragment);
