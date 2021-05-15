@@ -1,46 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API MakeItReal</title>
-  <!-- normalize css -->
-  <link rel="stylesheet" href="assets/css/normalize-8.0.1.css">
-  <!-- google fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
-  <!-- main styles -->
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  
-  <header class="header">
-    <div class="wrapper">
-      <h1 class="header__h1">API MakeItReal</h1>
-    </div>
-  </header>
-  
-  <main class="main">
-    <div class="wrapper">
-      <div id="app"></div>
-    </div>
-  </main>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API MakeItReal</title>
+    <!-- normalize css -->
+    <link rel="stylesheet" href="assets/css/normalize-8.0.1.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- main styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <h1 class="header__h1">API MakeItReal</h1>
+      </div>
+    </header>
 
+    <main class="main">
+      <div class="wrapper">
+        <div id="app"></div>
+      </div>
+    </main>
 
-  <template id="template-app">
-    <div class="form">
-      <h2 class="form__title">Login</h2>
-      <form id="form-login" action="#" method="POST">
-        <input class="form__input" type="text" name="username" placeholder="Usuario">
-        <input class="form__input" type="password" name="password" placeholder="Password">
-        <input class="form__input form__input--primary" type="submit" value="Login">
-      </form>
-    </div>
-  </template>
+    <template id="template-app">
+      <div class="form">
+        <h2 class="form__title">Login</h2>
+        <form id="form-login" action="#" method="POST">
+          <input
+            class="form__input"
+            type="text"
+            name="username"
+            placeholder="Usuario"
+          />
+          <input
+            class="form__input"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
+          <input
+            class="form__input form__input--primary"
+            type="submit"
+            value="Login"
+          />
+        </form>
+      </div>
+    </template>
 
-
-  <!-- script js -->
-  <script src="assets/js/app.js"></script>
-</body>
+    <!-- script js -->
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>
