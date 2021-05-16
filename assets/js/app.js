@@ -20,8 +20,8 @@ function showDashboard(username) {
 }
 
 function init() {
-  const username = localStorage.getItem('name');
-  showDashboard(username);
+  const userData = JSON.parse(localStorage.getItem('userdata'));
+  showDashboard(userData.name);
 }
 
 function login(username, password) {
@@ -46,8 +46,13 @@ function login(username, password) {
     .then((json) => {
       console.log(json);
       if (json.message === 'ok') {
-        localStorage.setItem('username', json.data.username);
-        localStorage.setItem('name', json.data.name);
+        const expireTime = 60 * 60 * 24 * 1000;
+        const dataUser = {
+          username: json.data.username,
+          name: json.data.name,
+          expiry: expireTime,
+        };
+        localStorage.setItem('userdata', JSON.stringify(dataUser));
         removeForm();
         init();
       } else {
