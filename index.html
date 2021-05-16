@@ -125,18 +125,27 @@
           <a id="logout" class="home__link" href="#logout">Logout</a>
         </div>
         <hr />
-        <div class="tweet">
-          <h2 class="tweet__title">New tweet</h2>
+        <div class="form-tweet">
+          <h2 class="form-tweet__title">New tweet</h2>
           <form action="#tweets" method="POST">
             <textarea
               name="tweet"
-              class="tweet__input"
+              class="form-tweet__texarea"
               id="tweet"
               cols="30"
               rows="3"
               placeholder="What's happening?"
             ></textarea>
+            <input
+              type="submit"
+              class="form-tweet__input form-tweet__input--submit"
+              value="Send"
+            />
           </form>
+        </div>
+        <div class="tweets">
+          <h2 class="form-tweet__title">Tweets</h2>
+          <p>No tweets</p>
         </div>
       </div>
     </template>
