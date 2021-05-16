@@ -112,8 +112,8 @@ function showFormRegister() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const username = localStorage.getItem('username') || undefined;
-  if (!username) {
+  const userData = JSON.parse(localStorage.getItem('userdata')) || undefined;
+  if (!userData) {
     showFormLogin();
   } else {
     init();
