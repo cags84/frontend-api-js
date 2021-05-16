@@ -33,7 +33,8 @@ function login(username, password) {
       console.log(json);
       if (json.message === 'ok') {
         const now = new Date();
-        const expireTime = now.getTime() + 100000;
+        // one hour, lifetime.
+        const expireTime = now.getTime() + 60 * 60 * 24 * 1000;
         const dataUser = {
           username: json.data.username,
           name: json.data.name,
