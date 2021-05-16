@@ -46,7 +46,8 @@ function login(username, password) {
     .then((json) => {
       console.log(json);
       if (json.message === 'ok') {
-        const expireTime = 60 * 60 * 24 * 1000;
+        const now = new Date();
+        const expireTime = now.getTime() + 60 * 60 * 1000;
         const dataUser = {
           username: json.data.username,
           name: json.data.name,
@@ -113,7 +114,9 @@ function showFormRegister() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const userData = JSON.parse(localStorage.getItem('userdata')) || undefined;
-  if (!userData) {
+  const now = new Date().getTime();
+  if (!userData || now > userData.expiry) {
+    localStorage.removeItem('userdata');
     showFormLogin();
   } else {
     init();
