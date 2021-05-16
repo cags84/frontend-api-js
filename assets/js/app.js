@@ -5,23 +5,9 @@ function removeForm() {
   divForm.parentElement.removeChild(divForm);
 }
 
-function showDashboard(username) {
-  const app = document.getElementById('app');
-  const template = document.getElementById('template-home').content;
-
-  const divHome = template.querySelector('.home');
-  divHome.innerHTML = `<p>Hola ${username}</p>`;
-
-  const fragment = document.createDocumentFragment();
-  const clone = divHome.cloneNode(true);
-
-  fragment.appendChild(clone);
-  app.appendChild(fragment);
-}
-
-function init() {
-  const userData = JSON.parse(localStorage.getItem('userdata'));
-  showDashboard(userData.name);
+function removeDashboard() {
+  const divHome = document.querySelector('div.home');
+  divHome.parentElement.removeChild(divHome);
 }
 
 function login(username, password) {
@@ -47,7 +33,7 @@ function login(username, password) {
       console.log(json);
       if (json.message === 'ok') {
         const now = new Date();
-        const expireTime = now.getTime() + 60 * 60 * 1000;
+        const expireTime = now.getTime() + 100000;
         const dataUser = {
           username: json.data.username,
           name: json.data.name,
@@ -87,12 +73,47 @@ function showFormLogin() {
   document.getElementById('form-login').addEventListener('submit', (e) => {
     e.preventDefault();
     const input = document.getElementById('form-login');
-    console.log(input.action.split('/')[3]);
     const username = input.elements.username.value;
     const password = input.elements.password.value;
-    console.log(username, password, 'hola');
     login(username, password);
   });
+}
+
+function logout() {
+  // TODO Falta implementar logout, para que el token sea revocado, el en backend.
+  const dashboard = document.querySelector('.home') || undefined;
+  fetch(`${URL_BASE}/api/users/logout`);
+
+  console.log(dashboard);
+  console.log(typeof dashboard);
+  if (dashboard) {
+    removeDashboard();
+  }
+  localStorage.removeItem('userdata');
+  showFormLogin();
+}
+
+function showDashboard(username) {
+  const app = document.getElementById('app');
+  const template = document.getElementById('template-home').content;
+
+  const homeSpam = template.querySelector('.home__span');
+  homeSpam.innerHTML = `${username}`;
+
+  const fragment = document.createDocumentFragment();
+  const clone = template.cloneNode(true);
+
+  fragment.appendChild(clone);
+  app.appendChild(fragment);
+
+  document.getElementById('logout').addEventListener('click', (e) => {
+    logout();
+  });
+}
+
+function init() {
+  const userData = JSON.parse(localStorage.getItem('userdata'));
+  showDashboard(userData.username);
 }
 
 function showFormRegister() {
@@ -113,11 +134,12 @@ function showFormRegister() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const userData = JSON.parse(localStorage.getItem('userdata')) || undefined;
+  const userData = JSON.parse(localStorage.getItem('userdata')) || false;
+  const expiryTime = userData.expiry || false;
   const now = new Date().getTime();
-  if (!userData || now > userData.expiry) {
-    localStorage.removeItem('userdata');
-    showFormLogin();
+
+  if (!userData || now > expiryTime) {
+    logout();
   } else {
     init();
   }
