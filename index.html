@@ -119,7 +119,26 @@
 
     <!-- template-home -->
     <template id="template-home">
-      <div class="home"></div>
+      <div class="home">
+        <div class="home__header">
+          <p class="home__p">Bienvenido @<span class="home__span"></span></p>
+          <a id="logout" class="home__link" href="#logout">Logout</a>
+        </div>
+        <hr />
+        <div class="tweet">
+          <h2 class="tweet__title">New tweet</h2>
+          <form action="#tweets" method="POST">
+            <textarea
+              name="tweet"
+              class="tweet__input"
+              id="tweet"
+              cols="30"
+              rows="3"
+              placeholder="What's happening?"
+            ></textarea>
+          </form>
+        </div>
+      </div>
     </template>
     <!-- /template-home -->
 

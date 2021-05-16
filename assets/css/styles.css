@@ -75,6 +75,11 @@ img {
   display: none;
 }
 
+/* fix margin link */
+.mb-1 {
+  margin-bottom: 1em;
+}
+
 /* estructura */
 .wrapper {
   width: 90%;
@@ -146,9 +151,51 @@ img {
   color: #1b95e0;
 }
 
-/* fix margin link */
-.mb-1 {
+/* home */
+.home {
+  padding: 1em;
+  margin-top: 1em;
+}
+
+.home__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: flex-start;
   margin-bottom: 1em;
+}
+
+.home__p {
+  flex: auto;
+  font-size: 1.3em;
+  font-weight: bold;
+  align-self: center;
+}
+
+hr {
+  margin-bottom: 1em;
+}
+
+.home__link {
+  flex: flex;
+  text-decoration: none;
+  color: #1b95e0;
+  align-self: center;
+}
+
+/* tweet */
+
+.tweet {
+}
+
+.tweet__title {
+  margin-bottom: 0.5em;
+}
+
+.tweet__input {
+  width: 100%;
+  padding: 1em;
+  border-radius: 5px;
 }
 
 /* debug */
