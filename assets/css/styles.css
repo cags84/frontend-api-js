@@ -185,18 +185,36 @@ hr {
 
 /* tweet */
 
-.tweet {
+.form-tweet {
+  margin-bottom: 1em;
 }
 
-.tweet__title {
+.form-tweet__title {
+  font-size: 18px;
   margin-bottom: 0.5em;
 }
 
-.tweet__input {
+.form-tweet__texarea {
   width: 100%;
   padding: 1em;
   border-radius: 5px;
+  margin-bottom: 0.6em;
 }
+
+.form-tweet__input {
+  padding: 0.6em;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-tweet__input--submit {
+  width: 80px;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--color-primary);
+}
+
+/* tweets */
 
 /* debug */
 .debug-1 {
