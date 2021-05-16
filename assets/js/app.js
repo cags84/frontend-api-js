@@ -30,7 +30,6 @@ function login(username, password) {
   fetch(`${URL_BASE}/api/users/login`, options)
     .then((res) => res.json())
     .then((json) => {
-      console.log(json);
       if (json.message === 'ok') {
         const now = new Date();
         // one hour, lifetime.
@@ -66,7 +65,6 @@ function showFormLogin() {
   document
     .getElementById('form-link-register')
     .addEventListener('click', (e) => {
-      console.log(e.target);
       removeForm();
       showFormRegister();
     });
@@ -126,7 +124,6 @@ function showFormRegister() {
   app.appendChild(fragment);
 
   document.getElementById('form-link-login').addEventListener('click', (e) => {
-    console.log(e);
     removeForm();
     showFormLogin();
   });
