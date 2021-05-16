@@ -1,14 +1,8 @@
 const URL_BASE = 'http://api.makeitreal.local:3000';
 
-function showFormLogin() {
-  const app = document.getElementById('app');
-  const template = document.getElementById('template-login').content;
-
-  const fragment = document.createDocumentFragment();
-  const clone = template.cloneNode(true);
-
-  fragment.appendChild(clone);
-  app.appendChild(fragment);
+function removeForm() {
+  const divForm = document.querySelector('div.form');
+  divForm.parentElement.removeChild(divForm);
 }
 
 function showDashboard(username) {
@@ -23,11 +17,6 @@ function showDashboard(username) {
 
   fragment.appendChild(clone);
   app.appendChild(fragment);
-}
-
-function removeFormLogin() {
-  const divLogin = document.querySelector('div.form');
-  divLogin.parentElement.removeChild(divLogin);
 }
 
 function init() {
@@ -59,7 +48,7 @@ function login(username, password) {
       if (json.message === 'ok') {
         localStorage.setItem('username', json.data.username);
         localStorage.setItem('name', json.data.name);
-        removeFormLogin();
+        removeForm();
         init();
       } else {
         const message = document.querySelector('p.form__message');
@@ -71,14 +60,57 @@ function login(username, password) {
     .catch((error) => console.log(error));
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  showFormLogin();
+function showFormLogin() {
+  const app = document.getElementById('app');
+  const template = document.getElementById('template-login').content;
+
+  const fragment = document.createDocumentFragment();
+  const clone = template.cloneNode(true);
+
+  fragment.appendChild(clone);
+  app.appendChild(fragment);
+
+  document
+    .getElementById('form-link-register')
+    .addEventListener('click', (e) => {
+      console.log(e.target);
+      removeForm();
+      showFormRegister();
+    });
 
   document.getElementById('form-login').addEventListener('submit', (e) => {
     e.preventDefault();
-    const input = document.getElementById('form-login').elements;
-    const username = input.username.value;
-    const password = input.password.value;
+    const input = document.getElementById('form-login');
+    console.log(input.action.split('/')[3]);
+    const username = input.elements.username.value;
+    const password = input.elements.password.value;
+    console.log(username, password, 'hola');
     login(username, password);
   });
+}
+
+function showFormRegister() {
+  const app = document.getElementById('app');
+  const template = document.getElementById('template-signup').content;
+
+  const fragment = document.createDocumentFragment();
+  const clone = template.cloneNode(true);
+
+  fragment.appendChild(clone);
+  app.appendChild(fragment);
+
+  document.getElementById('form-link-login').addEventListener('click', (e) => {
+    console.log(e);
+    removeForm();
+    showFormLogin();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const username = localStorage.getItem('username') || undefined;
+  if (!username) {
+    showFormLogin();
+  } else {
+    init();
+  }
 });

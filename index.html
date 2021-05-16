@@ -22,47 +22,52 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <nav class="nav">
-      <div class="logo">
-        <img
-          class="logo__img"
-          src="assets/images/logo-white.svg"
-          alt="Logo de Twitter"
-        />
-      </div>
-      <div class="branch">
-        <span class="branch_span">Twitter</span>
-      </div>
-    </nav>
-
+    <!-- header -->
     <header class="header">
-      <div class="wrapper">
-        <h1 class="header__h1">Iniciar sesión en Twitter</h1>
-      </div>
+      <!-- nav -->
+      <nav class="nav">
+        <div class="wrapper">
+          <div class="logo">
+            <img
+              class="logo__img"
+              src="assets/images/logo-white.svg"
+              alt="Logo de Twitter"
+            />
+          </div>
+        </div>
+      </nav>
+      <!-- /nav -->
     </header>
+    <!-- /header -->
 
+    <!-- main -->
     <main class="main">
       <div class="wrapper">
         <div id="app"></div>
       </div>
     </main>
+    <!-- /main -->
 
+    <!-- template-login -->
     <template id="template-login">
       <div class="form">
+        <h1 class="form__h1">Iniciar sesión en Twitter</h1>
         <p class="form__message display-none"></p>
-        <div class="mb-1em">
-          <form id="form-login" action="#" method="POST">
+        <div class="mb-1">
+          <form id="form-login" action="#login" method="POST">
             <input
               class="form__input"
               type="text"
               name="username"
               placeholder="Usuario"
+              required
             />
             <input
               class="form__input"
               type="password"
               name="password"
               placeholder="Contraseña"
+              required
             />
             <input
               class="form__input form__input--primary"
@@ -72,14 +77,51 @@
           </form>
         </div>
         <p class="text-center">
-          <a href="#" class="form__link">Regístrate en Twitter</a>
+          <a id="form-link-register" href="#register" class="form__link"
+            >Regístrate en Twitter</a
+          >
         </p>
       </div>
     </template>
+    <!-- /template-login -->
 
+    <!-- template-signup -->
+    <template id="template-signup">
+      <div class="form">
+        <h1 class="header__h1">Crea tu cuenta</h1>
+        <p class="form__message display-none"></p>
+        <div class="mb-1">
+          <form id="form" action="#" method="POST">
+            <input type="text" class="form__input" placeholder="Name" />
+            <input type="text" class="form__input" placeholder="Username" />
+            <input type="email" class="form__input" placeholder="Email" />
+            <input type="password" class="form__input" placeholder="Password" />
+            <input
+              type="password"
+              class="form__input"
+              placeholder="Password confirmation"
+            />
+            <input
+              type="submit"
+              value="Create user"
+              class="form__input form__input--primary"
+            />
+          </form>
+        </div>
+        <p class="text-center">
+          <a id="form-link-login" href="#login" class="form__link"
+            >Iniciar sesión</a
+          >
+        </p>
+      </div>
+    </template>
+    <!-- /template-signup -->
+
+    <!-- template-home -->
     <template id="template-home">
       <div class="home"></div>
     </template>
+    <!-- /template-home -->
 
     <!-- script js -->
     <script src="assets/js/app.js"></script>
