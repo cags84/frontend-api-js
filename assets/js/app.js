@@ -85,8 +85,6 @@ function logout() {
   const dashboard = document.querySelector('.home') || undefined;
   fetch(`${URL_BASE}/api/users/logout`);
 
-  console.log(dashboard);
-  console.log(typeof dashboard);
   if (dashboard) {
     removeDashboard();
   }
