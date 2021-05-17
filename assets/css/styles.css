@@ -230,4 +230,9 @@ hr {
   .wrapper {
     max-width: 680px;
   }
+
+  .form {
+    max-width: 70%;
+    margin: 0 auto;
+  }
 }
