@@ -198,6 +198,32 @@ function loadTweets() {
     });
 }
 
+function createUser() {
+  const user = {
+    name: document.getElementById('txt_name').value || undefined,
+    username: document.getElementById('txt_username').value || undefined,
+    email: document.getElementById('txt_email').value || undefined,
+    password: document.getElementById('txt_password').value || undefined,
+    passwordConfirmation:
+      document.getElementById('txt_password-confirmation').value || undefined,
+  };
+
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(user),
+    withCredentials: true,
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  fetch(`${URL_BASE}/api/users/`, options)
+    .then((res) => res.json())
+    .then((json) => console.log(json));
+}
+
 function createTweet() {
   const input = document.getElementById('form-tweet');
   const tweet = {
@@ -273,6 +299,11 @@ function showFormRegister() {
   document.getElementById('form-link-login').addEventListener('click', (e) => {
     removeForm();
     showFormLogin();
+  });
+
+  document.getElementById('form-register').addEventListener('submit', (e) => {
+    e.preventDefault();
+    createUser();
   });
 }
 
