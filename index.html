@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>API MakeItReal</title>
+    <!-- normalize css -->
+    <link rel="stylesheet" href="assets/css/normalize-8.0.1.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- main styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <!-- nav -->
+      <nav class="nav">
+        <div class="wrapper">
+          <div class="logo">
+            <img
+              class="logo__img"
+              src="assets/images/logo-white.svg"
+              alt="Logo de Twitter"
+            />
+          </div>
+        </div>
+      </nav>
+      <!-- /nav -->
+    </header>
+    <!-- /header -->
+
+    <!-- main -->
+    <main class="main">
+      <div class="wrapper">
+        <div id="app"></div>
+      </div>
+    </main>
+    <!-- /main -->
+
+    <!-- template-login -->
+    <template id="template-login">
+      <div class="form">
+        <h1 class="form__h1">Iniciar sesión en Twitter</h1>
+        <p class="form__message display-none"></p>
+        <div class="mb-1">
+          <form id="form-login" action="#login" method="POST">
+            <input
+              class="form__input"
+              type="text"
+              name="username"
+              placeholder="Usuario"
+              required
+            />
+            <input
+              class="form__input"
+              type="password"
+              name="password"
+              placeholder="Contraseña"
+              required
+            />
+            <input
+              class="form__input form__input--primary"
+              type="submit"
+              value="Login"
+            />
+          </form>
+        </div>
+        <p class="text-center">
+          <a id="form-link-register" href="#register" class="form__link"
+            >Regístrate en Twitter</a
+          >
+        </p>
+      </div>
+    </template>
+    <!-- /template-login -->
+
+    <!-- template-signup -->
+    <template id="template-signup">
+      <div class="form">
+        <h1 class="header__h1">Crea tu cuenta</h1>
+        <p class="form__message display-none"></p>
+        <div class="mb-1">
+          <form id="form" action="#" method="POST">
+            <input type="text" class="form__input" placeholder="Name" />
+            <input type="text" class="form__input" placeholder="Username" />
+            <input type="email" class="form__input" placeholder="Email" />
+            <input type="password" class="form__input" placeholder="Password" />
+            <input
+              type="password"
+              class="form__input"
+              placeholder="Password confirmation"
+            />
+            <input
+              type="submit"
+              value="Create user"
+              class="form__input form__input--primary"
+            />
+          </form>
+        </div>
+        <p class="text-center">
+          <a id="form-link-login" href="#login" class="form__link"
+            >Iniciar sesión</a
+          >
+        </p>
+      </div>
+    </template>
+    <!-- /template-signup -->
+
+    <!-- template-home -->
+    <template id="template-home">
+      <div class="home">
+        <div class="home__header">
+          <p class="home__p">Bienvenido @<span class="home__span"></span></p>
+          <a id="logout" class="home__link" href="#logout">Logout</a>
+        </div>
+        <hr />
+        <div class="form-tweet">
+          <h2 class="form-tweet__title">New tweet</h2>
+          <form action="#tweets" method="POST">
+            <textarea
+              name="tweet"
+              class="form-tweet__texarea"
+              id="tweet"
+              cols="30"
+              rows="3"
+              placeholder="What's happening?"
+            ></textarea>
+            <input
+              type="submit"
+              class="form-tweet__input form-tweet__input--submit"
+              value="Send"
+            />
+          </form>
+        </div>
+        <div class="tweets">
+          <h2 class="form-tweet__title">Tweets</h2>
+          <p>No tweets</p>
+        </div>
+      </div>
+    </template>
+    <!-- /template-home -->
+
+    <!-- script js -->
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

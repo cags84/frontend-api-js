@@ -1,0 +1,25 @@
+{
+  "name": "frontend-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cags84/frontend-api-js.git"
+  },
+  "author": "Carlos Guzmán <cags84@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cags84/frontend-api-js/issues"
+  },
+  "homepage": "https://github.com/cags84/frontend-api-js#readme",
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.1"
+  }
+}
