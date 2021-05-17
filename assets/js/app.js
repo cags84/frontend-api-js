@@ -90,6 +90,37 @@ function logout() {
   showFormLogin();
 }
 
+function createTweet() {
+  const input = document.getElementById('form-tweet');
+  const tweet = {
+    content: input.elements.tweet.value.trim(),
+  };
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(tweet),
+    withCredentials: true,
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  // eslint-disable-next-line no-undef
+  Notiflix.Notify.Init({ position: 'center-bottom', with: '100%' });
+
+  fetch(`${URL_BASE}/api/tweets/`, options)
+    .then((res) => res.json())
+    .then((json) => {
+      // eslint-disable-next-line no-undef
+      Notiflix.Notify.Success('Tweet creado corrrectamente');
+    })
+    .catch((err) => {
+      // eslint-disable-next-line no-undef
+      Notiflix.Notify.Failure('Error al intentar crear el Tweet');
+    });
+}
+
 function showDashboard(username) {
   const app = document.getElementById('app');
   const template = document.getElementById('template-home').content;
@@ -103,8 +134,13 @@ function showDashboard(username) {
   fragment.appendChild(clone);
   app.appendChild(fragment);
 
-  document.getElementById('logout').addEventListener('click', (e) => {
+  document.getElementById('logout').addEventListener('click', () => {
     logout();
+  });
+
+  document.getElementById('form-tweet').addEventListener('submit', (e) => {
+    e.preventDefault();
+    createTweet();
   });
 }
 
