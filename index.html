@@ -122,7 +122,7 @@
     <template id="template-home">
       <div class="home">
         <div class="home__header">
-          <p class="home__p">Bienvenido @<span class="home__span"></span></p>
+          <p class="home__p">Welcome @<span class="home__span"></span></p>
           <a id="logout" class="home__link" href="#logout">Logout</a>
         </div>
         <hr />
@@ -145,16 +145,47 @@
             />
           </form>
         </div>
-        <div class="tweets">
-          <h2 class="form-tweet__title">Tweets</h2>
-          <p style="margin-bottom: 1em">No tweets</p>
-          <hr />
-        </div>
+        <section class="tweets">
+          <h2 class="tweets__title">Tweets</h2>
+          <div id="articles"></div>
+        </section>
       </div>
     </template>
     <!-- /template-home -->
 
+    <!-- template-tweets -->
+    <template id="template-tweets">
+      <article class="tweets-article">
+        <div class="tweets-article__div">
+          <img
+            src="assets/images/avatar-men.jpg"
+            alt="Avatar"
+            class="tweets-article__img"
+          />
+          <div class="tweets-article__content">
+            <span id="tweets-user" class="tweets-article__span"></span>
+            @<span id="tweets-username"></span> -
+            <span id="tweets-date"></span>
+            <p id="tweet-message" class="tweets-article__p"></p>
+          </div>
+        </div>
+        <div class="glyphicon">
+          <a href="#comment"
+            ><i class="far fa-comment"> <span class="comments">0</span></i></a
+          >
+          <a href="#like"
+            ><i class="far fa-heart"> <span class="likes">0</span></i></a
+          >
+        </div>
+      </article>
+    </template>
+    <!-- /template-tweets -->
+
     <!-- script js -->
+    <script
+      src="https://kit.fontawesome.com/f2db0bb37e.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="assets/js/notiflix-2.7.0.min.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
