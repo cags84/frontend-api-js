@@ -47,12 +47,15 @@ function timeFromNow(time) {
     // Hours
     tfn.unitOfTime = 'min';
     tfn.time = Math.floor(difference / 60);
-  } else {
+  } else if (difference < 2) {
     // Seconds
+    tfn.unitOfTime = '';
+    tfn.time = 'now';
+    // eslint-disable-next-line no-lonely-if
+  } else {
     tfn.unitOfTime = 's';
     tfn.time = Math.floor(difference);
   }
-
   // Return time from now data
   return tfn;
 }
@@ -161,13 +164,14 @@ function loadTweets() {
   fetch(`${URL_BASE}/api/tweets/`, options)
     .then((res) => res.json())
     .then((json) => {
+      document.getElementById('textarea-tweet').value = '';
       if (json.data.length > 0) {
         articles.innerHTML = '';
         const template = document.getElementById('template-tweets').content;
 
         // eslint-disable-next-line no-plusplus
         for (let i = 0; i < json.data.length; i++) {
-          const difference = timeFromNow(json.data[0].createdAt);
+          const difference = timeFromNow(json.data[i].createdAt);
 
           const spamUser = template.getElementById('tweets-user');
           spamUser.innerHTML = `${json.data[i].user.name}`;
