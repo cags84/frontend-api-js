@@ -18,6 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="assets/css/notiflix-2.7.0.min.css" />
     <!-- main styles -->
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
@@ -127,7 +128,7 @@
         <hr />
         <div class="form-tweet">
           <h2 class="form-tweet__title">New tweet</h2>
-          <form action="#tweets" method="POST">
+          <form id="form-tweet" action="#tweets" method="POST">
             <textarea
               name="tweet"
               class="form-tweet__texarea"
@@ -135,6 +136,7 @@
               cols="30"
               rows="3"
               placeholder="What's happening?"
+              required
             ></textarea>
             <input
               type="submit"
@@ -145,13 +147,15 @@
         </div>
         <div class="tweets">
           <h2 class="form-tweet__title">Tweets</h2>
-          <p>No tweets</p>
+          <p style="margin-bottom: 1em">No tweets</p>
+          <hr />
         </div>
       </div>
     </template>
     <!-- /template-home -->
 
     <!-- script js -->
+    <script src="assets/js/notiflix-2.7.0.min.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
 </html>
