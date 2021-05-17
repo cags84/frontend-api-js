@@ -92,15 +92,45 @@
         <h1 class="header__h1">Crea tu cuenta</h1>
         <p class="form__message display-none"></p>
         <div class="mb-1">
-          <form id="form" action="#" method="POST">
-            <input type="text" class="form__input" placeholder="Name" />
-            <input type="text" class="form__input" placeholder="Username" />
-            <input type="email" class="form__input" placeholder="Email" />
-            <input type="password" class="form__input" placeholder="Password" />
+          <form id="form-register" action="#" method="POST">
+            <input
+              type="text"
+              id="txt_name"
+              name="name"
+              class="form__input"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="text"
+              id="txt_username"
+              name="username"
+              class="form__input"
+              placeholder="Username"
+            />
+            <input
+              type="email"
+              id="txt_email"
+              name="email"
+              class="form__input"
+              placeholder="Email"
+              required
+            />
             <input
               type="password"
+              id="txt_password"
+              name="password"
+              class="form__input"
+              placeholder="Password"
+              required
+            />
+            <input
+              type="password"
+              id="txt_password-confirmation"
+              name="passwordConfirmation"
               class="form__input"
               placeholder="Password confirmation"
+              required
             />
             <input
               type="submit"
