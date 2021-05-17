@@ -216,6 +216,49 @@ hr {
 
 /* tweets */
 
+.tweets__title {
+  margin-bottom: 1em;
+}
+
+.tweets-article {
+  border-bottom: 1px solid #ccc;
+  padding: 1em 0;
+}
+
+.tweets-article__content {
+  padding-left: 1em;
+}
+
+.tweets-article__span {
+  font-weight: bold;
+}
+
+.tweets-article__img {
+  height: 50px;
+}
+
+.tweets-article__p {
+  padding-top: 1em;
+}
+
+.tweets-article__div {
+  display: flex;
+}
+
+.glyphicon {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1em;
+}
+
+.comments {
+  margin-left: 0.5em;
+}
+
+.likes {
+  margin-left: 0.5em;
+}
+
 /* debug */
 .debug-1 {
   outline: 1px solid var(--color-danger);
