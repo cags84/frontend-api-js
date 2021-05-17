@@ -146,7 +146,7 @@ function logout() {
   if (dashboard) {
     removeDashboard();
   }
-  localStorage.removeItem('userdata');
+  localStorage.clear();
   showFormLogin();
 }
 
